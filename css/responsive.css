@@ -178,4 +178,24 @@
   .search-box {
     width: 100%;
   }
+
+  .whatsapp-float-container {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .whatsapp-float-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-float-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .whatsapp-pill-label {
+    display: none;
+  }
 }
+
