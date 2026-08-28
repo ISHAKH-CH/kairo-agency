@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bureau Journal &amp; Insights — KAIRO Design Bureau</title>
+  <meta name="description" content="Thought leadership, strategic essays, and design perspectives from KAIRO Design Bureau on luxury branding, typography, and commercial art.">
+  <!-- Google Fonts: Standard Premium Hierarchy (Inter, Plus Jakarta Sans, Outfit, JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="KAIRO Home">
+        <img src="assets/logo/kairo-logo-header.svg" alt="KAIRO Logo" class="brand-logo-img" width="160" height="42">
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="process.html" class="nav-link">Process</a>
+        <a href="insights.html" class="nav-link active">Insights</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-status-badge" aria-hidden="true">
+          <span class="nav-status-dot"></span>
+          <span id="navLiveClock">DXB 22:30 • LDN 19:30</span>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-sm">
+          Let's Talk
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33 8h9.34M8 3.33L12.67 8 8 12.67" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="link-num">01</span></a>
+      <a href="about.html" class="mobile-nav-link"><span>About</span> <span class="link-num">02</span></a>
+      <a href="services.html" class="mobile-nav-link"><span>Services</span> <span class="link-num">03</span></a>
+      <a href="portfolio.html" class="mobile-nav-link"><span>Portfolio</span> <span class="link-num">04</span></a>
+      <a href="process.html" class="mobile-nav-link"><span>Process</span> <span class="link-num">05</span></a>
+      <a href="insights.html" class="mobile-nav-link active"><span>Insights</span> <span class="link-num">06</span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <span class="link-num">07</span></a>
+    </div>
+    <div class="mobile-contact-info">
+      <p>Direct Inquiries: <a href="mailto:info@kairodesigns.org">info@kairodesigns.org</a></p>
+      <p>Direct Phone: <a href="tel:+971504585231">+971 50 458 5231</a></p>
+      <div style="margin-top: 1.5rem;">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Start a Project</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- Insights Hero -->
+    <section class="section-lg" style="padding-top: calc(var(--space-2xl) + 3rem);">
+      <div class="container">
+        <div class="eyebrow reveal">
+          <span class="eyebrow-dot"></span>
+          Bureau Journal &amp; Essays
+        </div>
+        <h1 class="reveal reveal-delay-1" style="font-size: clamp(2.8rem, 6vw, 5.5rem); max-width: 1050px; margin-bottom: 2rem;">
+          Perspectives on <span class="text-gold-gradient">Brand Power</span>.
+        </h1>
+        <p class="lead reveal reveal-delay-2" style="max-width: 800px; font-size: 1.2rem; line-height: 1.7; color: var(--text-silver);">
+          Critical essays, strategy teardowns, and design commentary on what makes modern enterprises culturally iconic and commercially dominant.
+        </p>
+
+        <!-- Categories Bar -->
+        <div class="filter-bar reveal reveal-delay-3" style="margin-top: 3.5rem;">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-filter="all">All Journal Articles</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="strategy">Strategy</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+            <button class="filter-btn" data-filter="luxury">Luxury</button>
+            <button class="filter-btn" data-filter="digital">Digital</button>
+          </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="insights-grid">
+          <!-- Article 1 -->
+          <article class="insight-card reveal">
+            <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=800&q=80" alt="Typography in Luxury" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>BRANDING &amp; TYPOGRAPHY</span>
+                <span>6 MIN READ</span>
+              </div>
+              <h3 class="insight-title">The Geometry of Prestige: Why High-End Brands Are Returning to Custom Glyphs</h3>
+              <p class="insight-desc">An analysis of why sterile sans-serif trend chasing has diluted brand equity, and why custom typographic marks represent the new luxury moat.</p>
+              <a href="article.html?id=typography" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="insight-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Strategy in Real Estate" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>STRATEGY &amp; REAL ESTATE</span>
+                <span>8 MIN READ</span>
+              </div>
+              <h3 class="insight-title">Beyond the Render: Architecting Brands for Ultra-Prime Developments</h3>
+              <p class="insight-desc">How narrative worldbuilding and tactile monograph printing accelerate $100M+ real estate pre-sales before ground is ever broken.</p>
+              <a href="article.html?id=realestate" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="insight-card reveal reveal-delay-2">
+            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="Packaging Physics" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>PACKAGING &amp; CRAFT</span>
+                <span>5 MIN READ</span>
+              </div>
+              <h3 class="insight-title">The Tactile Moment: Engineering the Psychology of the Unboxing Ritual</h3>
+              <p class="insight-desc">How paper grammage, foil debossing depth, and magnetic closure resistance trigger subconscious dopamine responses in luxury buyers.</p>
+              <a href="article.html?id=packaging" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="insight-card reveal">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI in Branding" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>AI &amp; FUTURE TECH</span>
+                <span>7 MIN READ</span>
+              </div>
+              <h3 class="insight-title">Human Craft in the Age of Generative AI: Why Authentic Art Direction Matters More Than Ever</h3>
+              <p class="insight-desc">When digital content is infinite, true human curation, bespoke craftsmanship, and nuanced taste become the rarest commodities.</p>
+              <a href="article.html?id=ai-craft" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="insight-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Eco Hospitality" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>HOSPITALITY BRANDING</span>
+                <span>6 MIN READ</span>
+              </div>
+              <h3 class="insight-title">Biophilic Luxury: Redefining Sustainable Hospitality for Modern Travelers</h3>
+              <p class="insight-desc">Why sustainability must be integrated into the core brand identity rather than relegated to corporate CSR disclaimers.</p>
+              <a href="article.html?id=hospitality" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="insight-card reveal reveal-delay-2">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Executive Brand Presence" class="insight-thumb" loading="lazy">
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span>EXECUTIVE IDENTITY</span>
+                <span>4 MIN READ</span>
+              </div>
+              <h3 class="insight-title">The Founder as Brand Anchor: Building Symbiotic Personal and Corporate Reputations</h3>
+              <p class="insight-desc">Strategies for high-profile CEOs to build executive authority that directly fuels enterprise valuation.</p>
+              <a href="article.html?id=founder" class="insight-readmore">Read Full Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-lg" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="eyebrow" style="color: var(--gold-highlight);">Stay Ahead</div>
+          <h2 class="cta-title">Subscribe to Bureau Journal</h2>
+          <p class="cta-desc">
+            Receive our quarterly monographs, brand teardowns, and curated design essays.
+          </p>
+          <div style="max-width: 500px; margin: 0 auto;">
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your executive email address" class="newsletter-input" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <img src="assets/logo/kairo-logo-header.svg" alt="KAIRO Design Bureau" width="160" height="42">
+          </a>
+          <p class="footer-brand-desc">
+            KAIRO is an independent branding agency and creative design bureau crafting distinctive identities, luxury collateral, and digital worlds for visionary enterprises.
+          </p>
+          <div class="footer-contact-item"><span>✉</span> <a href="mailto:info@kairodesigns.org">info@kairodesigns.org</a></div>
+          <div class="footer-contact-item"><span>☏</span> <a href="tel:+971504585231">+971 50 458 5231</a></div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Bureau</a></li>
+            <li><a href="services.html" class="footer-link">Capabilities</a></li>
+            <li><a href="portfolio.html" class="footer-link">Selected Work</a></li>
+            <li><a href="process.html" class="footer-link">Our Process</a></li>
+            <li><a href="insights.html" class="footer-link">Insights &amp; Journal</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Practices</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#strategy" class="footer-link">Brand Strategy</a></li>
+            <li><a href="services.html#identity" class="footer-link">Visual Identity</a></li>
+            <li><a href="services.html#logo" class="footer-link">Logo Systems</a></li>
+            <li><a href="services.html#digital" class="footer-link">Digital Experiences</a></li>
+            <li><a href="services.html#packaging" class="footer-link">Luxury Packaging</a></li>
+            <li><a href="services.html#guidelines" class="footer-link">Brand Architecture</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Bureau Journal</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Quarterly insights on strategic branding, luxury aesthetics, and commercial design.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your executive email" class="newsletter-input" required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-statement">KAIRO — Brands with Purpose. Designed for Impact.</div>
+        <div>&copy; 2026 KAIRO DESIGN BUREAU. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Engagement</a>
+          <a href="#">Dubai HQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

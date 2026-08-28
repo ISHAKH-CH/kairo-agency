@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="100%" height="100%">
+  <defs>
+    <linearGradient id="navFeatherLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C68218" />
+      <stop offset="40%" stop-color="#E5A93C" />
+      <stop offset="100%" stop-color="#F5B942" />
+    </linearGradient>
+    <linearGradient id="navFeatherRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8F5405" />
+      <stop offset="45%" stop-color="#B87714" />
+      <stop offset="100%" stop-color="#DF9A26" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Icon Mark -->
+  <g transform="translate(10, 5) scale(0.24)">
+    <path d="M 90 240 L 90 40 Q 90 0 125 0 L 142 0 Q 155 25 152 75 L 152 240 Z" fill="#FFFFFF" />
+    <path d="M 180 180 Q 240 180 290 230 Q 340 280 370 300 Q 320 300 270 270 Q 220 230 180 220 Z" fill="#FFFFFF" />
+    
+    <path d="M 92 278 L 175 165 L 165 178 L 220 100 L 210 115 L 272 38 Q 286 28 300 30 L 200 180 L 150 240 Z" fill="url(#navFeatherLeft)" />
+    <path d="M 300 30 Q 280 55 270 95 L 255 80 L 230 150 L 215 135 L 160 215 L 92 278 L 200 180 Z" fill="url(#navFeatherRight)" />
+    <path d="M 90 280 L 302 28" stroke="#FFE18F" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="312" cy="14" r="11" fill="#F5B942" />
+  </g>
+
+  <!-- Wordmark Text -->
+  <g transform="translate(110, 18)">
+    <!-- kairo text -->
+    <g transform="scale(0.48)">
+      <!-- k -->
+      <path d="M 0 10 L 16 10 L 16 110 L 0 110 Z M 16 70 L 48 35 L 70 35 L 34 74 L 72 110 L 50 110 L 22 84 L 16 90 Z" fill="#FFFFFF" fill-rule="evenodd" />
+      <!-- a -->
+      <path d="M 88 58 Q 88 35 116 35 Q 144 35 144 58 L 144 110 L 128 110 L 128 98 Q 118 112 98 112 Q 78 112 78 92 Q 78 72 105 68 L 128 65 L 128 58 Q 128 49 116 49 Q 104 49 104 58 Z M 128 77 L 109 80 Q 94 82 94 92 Q 94 100 106 100 Q 128 100 128 85 Z" fill="#FFFFFF" fill-rule="evenodd" />
+      <!-- i with gold dot -->
+      <path d="M 168 40 L 184 40 L 184 110 L 168 110 Z" fill="#FFFFFF" />
+      <rect x="168" y="16" width="16" height="16" rx="2" fill="#F5B942" />
+      <!-- r -->
+      <path d="M 204 40 L 220 40 L 220 56 Q 230 38 248 38 L 254 38 L 254 55 Q 234 53 220 68 L 220 110 L 204 110 Z" fill="#FFFFFF" />
+      <!-- o -->
+      <path d="M 305 35 Q 342 35 342 74 Q 342 112 305 112 Q 268 112 268 74 Q 268 35 305 35 Z M 305 50 Q 284 50 284 74 Q 284 97 305 97 Q 326 97 326 74 Q 326 50 305 50 Z" fill="#FFFFFF" fill-rule="evenodd" />
+    </g>
+
+    <!-- Subtitle: DESIGN BUREAU -->
+    <text x="82" y="66" 
+          text-anchor="middle" 
+          font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" 
+          font-size="9.5" 
+          font-weight="700" 
+          letter-spacing="5" 
+          fill="#E5A93C">DESIGN BUREAU</text>
+  </g>
+</svg>

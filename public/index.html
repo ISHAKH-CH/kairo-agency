@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ledgerly — Simple Bookkeeping & Business Management</title>
+  <meta name="description" content="A clean, modern, and minimal bookkeeping application designed for micro and small businesses to manage sales, purchases, inventory, customers, and expenses.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modules.css">
+</head>
+<body>
+
+<div id="app-root">
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+
+  <!-- Left Sidebar -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <a href="#/dashboard" class="brand-logo" id="brand-logo-link">
+        <div class="brand-icon">L</div>
+        <div class="brand-info">
+          <span class="brand-name">Ledgerly</span>
+          <span class="brand-subtitle">Simple Bookkeeping</span>
+        </div>
+      </a>
+      <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" title="Toggle Sidebar (Ctrl+B)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation List -->
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Main Menu</div>
+      
+      <a href="#/dashboard" class="nav-item" data-route="dashboard" id="nav-dashboard">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+
+      <a href="#/stock" class="nav-item" data-route="stock" id="nav-stock">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </span>
+        <span class="nav-label">Stock</span>
+        <span class="nav-badge" id="badge-stock-count">20</span>
+      </a>
+
+      <a href="#/purchases" class="nav-item" data-route="purchases" id="nav-purchases">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </span>
+        <span class="nav-label">Purchase</span>
+      </a>
+
+      <a href="#/quotations" class="nav-item" data-route="quotations" id="nav-quotations">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </span>
+        <span class="nav-label">Quotation</span>
+      </a>
+
+      <a href="#/sales" class="nav-item" data-route="sales" id="nav-sales">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </span>
+        <span class="nav-label">Sales</span>
+      </a>
+
+      <a href="#/reports" class="nav-item" data-route="reports" id="nav-reports">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span class="nav-label">Reports</span>
+      </a>
+
+      <div class="nav-section-title">Relationships & Finance</div>
+
+      <a href="#/customers" class="nav-item" data-route="customers" id="nav-customers">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span class="nav-label">Customers</span>
+      </a>
+
+      <a href="#/payments" class="nav-item" data-route="payments" id="nav-payments">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+        </span>
+        <span class="nav-label">Payment Received</span>
+      </a>
+
+      <a href="#/expenditure" class="nav-item" data-route="expenditure" id="nav-expenditure">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+        </span>
+        <span class="nav-label">Expenditure</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <a href="#/settings" class="nav-item" data-route="settings" id="nav-settings">
+        <span class="nav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <span class="nav-label">Settings</span>
+      </a>
+
+      <button id="theme-toggle-btn" class="nav-item" style="background:none; border:none; text-align:left; width:100%; cursor:pointer;">
+        <span class="nav-icon" id="theme-icon-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+        <span class="nav-label" id="theme-toggle-label">Dark Mode</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Viewport -->
+  <main id="main-viewport">
+    <!-- Topbar -->
+    <header id="topbar">
+      <div class="topbar-left">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="page-header-title-group">
+          <h1 class="page-title" id="page-title">Dashboard</h1>
+          <div class="breadcrumbs" id="breadcrumbs">
+            <a href="#/dashboard">Home</a> <span>/</span> <span id="breadcrumb-current">Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Global Search Button -->
+        <button id="global-search-trigger" class="global-search-trigger" title="Global Search (Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search everything...</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
+        <!-- Quick Action Dropdown Trigger -->
+        <div style="position:relative;">
+          <button id="quick-action-btn" class="quick-action-dropdown-btn" title="Quick Create New">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Create New</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <!-- Quick Action Menu -->
+          <div id="quick-action-menu" class="card" style="display:none; position:absolute; right:0; top:calc(100% + 8px); width:200px; padding:6px; z-index:100; box-shadow:var(--shadow-lg);">
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openCreateSaleModal()">+ New Sale</button>
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openCreatePurchaseModal()">+ New Purchase</button>
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openCreateQuotationModal()">+ New Quotation</button>
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openCreateCustomerModal()">+ Add Customer</button>
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openRecordPaymentModal()">+ Record Payment</button>
+            <button class="nav-item" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="App.openCreateExpenseModal()">+ Add Expense</button>
+          </div>
+        </div>
+
+        <!-- Business Selector Pill -->
+        <div class="business-pill" id="business-pill" title="Active Business">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18"></path>
+            <path d="M9 8h1"></path>
+            <path d="M9 12h1"></path>
+            <path d="M9 16h1"></path>
+            <path d="M14 8h1"></path>
+            <path d="M14 12h1"></path>
+            <path d="M14 16h1"></path>
+            <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+          </svg>
+          <span id="topbar-business-name">Acme Trading LLC</span>
+        </div>
+
+        <!-- User Profile Avatar -->
+        <div class="user-profile-pill" id="user-profile-pill" title="User Profile">
+          <div class="user-avatar" id="user-avatar-initials">JD</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Content Container -->
+    <div id="app-content">
+      <!-- Views will be dynamically rendered here by the Router -->
+      <div style="display:flex; justify-content:center; align-items:center; height:300px; color:var(--text-muted);">
+        Loading Ledgerly...
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Spotlight Global Search Modal -->
+<div id="global-search-modal" class="modal-backdrop">
+  <div class="modal-card spotlight-modal">
+    <div class="spotlight-input-wrapper">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="spotlight-search-input" class="spotlight-input" placeholder="Type customer, product, invoice, purchase, quote..." autocomplete="off">
+      <kbd class="search-kbd">ESC</kbd>
+    </div>
+    <div id="spotlight-search-results" class="spotlight-results">
+      <div style="padding: 24px; text-align:center; color:var(--text-muted); font-size:13px;">
+        Search across Customers, Products, Invoices, Purchases, Quotations, and Expenses.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Global Modal Container -->
+<div id="app-modal" class="modal-backdrop">
+  <div class="modal-card" id="app-modal-card">
+    <div class="modal-header">
+      <h3 class="modal-title" id="app-modal-title">Modal Title</h3>
+      <button class="topbar-icon-btn" onclick="Modal.close()" title="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body" id="app-modal-body"></div>
+    <div class="modal-footer" id="app-modal-footer"></div>
+  </div>
+</div>
+
+<!-- Global Slide-over Drawer -->
+<div id="drawer-backdrop" class="drawer-backdrop">
+  <div class="side-drawer" id="side-drawer">
+    <div class="modal-header">
+      <h3 class="modal-title" id="side-drawer-title">Drawer Title</h3>
+      <button class="topbar-icon-btn" onclick="Drawer.close()" title="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body" id="side-drawer-body"></div>
+    <div class="modal-footer" id="side-drawer-footer"></div>
+  </div>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+<!-- Frontend JavaScript Modules -->
+<script src="js/api.js"></script>
+<script src="js/state.js"></script>
+<script src="js/utils.js"></script>
+
+<script src="js/components/toast.js"></script>
+<script src="js/components/modal.js"></script>
+<script src="js/components/drawer.js"></script>
+<script src="js/components/table.js"></script>
+<script src="js/components/filterBar.js"></script>
+<script src="js/components/charts.js"></script>
+<script src="js/components/searchModal.js"></script>
+<script src="js/components/sidebar.js"></script>
+<script src="js/components/topbar.js"></script>
+
+<script src="js/views/dashboardView.js"></script>
+<script src="js/views/stockView.js"></script>
+<script src="js/views/purchasesView.js"></script>
+<script src="js/views/quotationsView.js"></script>
+<script src="js/views/salesView.js"></script>
+<script src="js/views/customersView.js"></script>
+<script src="js/views/paymentsView.js"></script>
+<script src="js/views/expenditureView.js"></script>
+<script src="js/views/reportsView.js"></script>
+<script src="js/views/settingsView.js"></script>
+
+<script src="js/router.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  # Option 1: Static Site (Fastest & Free CDN)
+  - type: web
+    name: kairo-design-bureau
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN

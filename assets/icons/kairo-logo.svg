@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Avant-Garde Geometric K Monogram -->
+  <path d="M22 15H36V85H22V15Z" fill="currentColor"/>
+  <path d="M78 15H60L36 50L60 85H78L52 50L78 15Z" fill="currentColor"/>
+  <circle cx="76" cy="22" r="6" fill="#FF3B19"/>
+</svg>

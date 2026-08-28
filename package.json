@@ -1,0 +1,19 @@
+{
+  "name": "kairo-design-bureau",
+  "version": "2.0.0",
+  "description": "KAIRO — Branding & Creative Agency Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "branding",
+    "creative-agency",
+    "luxury-design",
+    "kairo",
+    "design-bureau"
+  ],
+  "author": "KAIRO Design Bureau",
+  "license": "UNLICENSED"
+}
