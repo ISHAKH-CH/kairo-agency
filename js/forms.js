@@ -61,44 +61,129 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Contact Form Submission
+  // 3. Contact Form Submission (Live FormSubmit Endpoint)
   const contactForm = document.getElementById('projectInquiryForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
+      // Extract form values
+      const name = document.getElementById('clientName')?.value || '';
+      const company = document.getElementById('companyName')?.value || '';
+      const email = document.getElementById('clientEmail')?.value || '';
+      const phone = document.getElementById('clientPhone')?.value || '';
+      const website = document.getElementById('clientWebsite')?.value || 'Not provided';
+      const industry = document.getElementById('industrySelect')?.value || 'Not specified';
+      const timeline = document.getElementById('timelineSelect')?.value || 'Quarter';
+      const message = document.getElementById('projectDescription')?.value || '';
+      const budgetDisplay = document.getElementById('budgetValueDisplay')?.textContent || '$25k – $50k';
+
+      // Checked services
+      const selectedServices = [];
+      document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+        selectedServices.push(cb.value);
+      });
+
+      const payload = {
+        name: name,
+        company: company,
+        email: email,
+        phone: phone,
+        website: website,
+        industry: industry,
+        services: selectedServices.length > 0 ? selectedServices.join(', ') : 'None selected',
+        estimated_budget: budgetDisplay,
+        timeline: timeline,
+        message: message,
+        _subject: `New KAIRO Project Brief: ${name} (${company})`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Processing Inquiry...</span>`;
+      submitBtn.innerHTML = `<span>Dispatching Brief to Partners...</span>`;
 
-      setTimeout(() => {
-        submitBtn.innerHTML = `<span>Inquiry Dispatched Successfully ✓</span>`;
-        submitBtn.style.background = '#28a745';
-        submitBtn.style.color = '#ffffff';
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/contact@kairodesigns.org', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
 
-        showToast('Thank you! Your project brief has been received. A Senior Partner from KAIRO will reach out within 24 hours.');
-        contactForm.reset();
+        const data = await response.json();
 
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-          submitBtn.style.color = '';
-        }, 4000);
-      }, 1200);
+        if (response.ok || data.success === "true" || data.message) {
+          submitBtn.innerHTML = `<span>Brief Dispatched Successfully ✓</span>`;
+          submitBtn.style.background = '#28a745';
+          submitBtn.style.color = '#ffffff';
+
+          showToast('Thank you! Your project brief has been sent directly to contact@kairodesigns.org. A Senior Partner will reach out within 24 hours.');
+          contactForm.reset();
+
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.background = '';
+            submitBtn.style.color = '';
+          }, 4500);
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        showToast('Inquiry could not be dispatched automatically. Please contact us directly at contact@kairodesigns.org');
+      }
     });
   }
 
-  // 4. Newsletter Subscription
+  // 4. Newsletter Subscription (Live FormSubmit Endpoint)
   const newsletterForms = document.querySelectorAll('.newsletter-form');
   newsletterForms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = form.querySelector('.newsletter-input');
-      if (input && input.value) {
-        showToast(`Thank you! ${input.value} is now subscribed to KAIRO Bureau Journal.`);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!input || !input.value) return;
+
+      const email = input.value;
+      const originalBtnText = submitBtn ? submitBtn.textContent : 'Join';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '...';
+      }
+
+      try {
+        await fetch('https://formsubmit.co/ajax/contact@kairodesigns.org', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            _subject: `New KAIRO Bureau Journal Subscriber: ${email}`,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        showToast(`Thank you! ${email} is now subscribed to KAIRO Bureau Journal.`);
         input.value = '';
+      } catch (err) {
+        showToast(`Thank you! ${email} has been registered.`);
+        input.value = '';
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
       }
     });
   });

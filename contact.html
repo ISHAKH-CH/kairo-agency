@@ -165,16 +165,21 @@
               Provide as much detail as possible to help us assess strategic alignment and prepare for our inaugural discovery session.
             </p>
 
-            <form id="projectInquiryForm">
+            <form id="projectInquiryForm" action="https://formsubmit.co/contact@kairodesigns.org" method="POST">
+              <!-- Spam Honeypot -->
+              <input type="text" name="_honey" style="display:none">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
               <!-- Name & Company -->
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="clientName">Your Full Name <span class="req">*</span></label>
-                  <input type="text" id="clientName" class="form-control" placeholder="e.g. Jonathan Sterling" required>
+                  <input type="text" id="clientName" name="name" class="form-control" placeholder="e.g. Jonathan Sterling" required>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="companyName">Company / Organization <span class="req">*</span></label>
-                  <input type="text" id="companyName" class="form-control" placeholder="e.g. Sterling Luxury Group" required>
+                  <input type="text" id="companyName" name="company" class="form-control" placeholder="e.g. Sterling Luxury Group" required>
                 </div>
               </div>
 
@@ -182,11 +187,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="clientEmail">Email Address <span class="req">*</span></label>
-                  <input type="email" id="clientEmail" class="form-control" placeholder="e.g. js@sterlingluxury.com" required>
+                  <input type="email" id="clientEmail" name="email" class="form-control" placeholder="e.g. js@sterlingluxury.com" required>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="clientPhone">Phone Number <span class="req">*</span></label>
-                  <input type="tel" id="clientPhone" class="form-control" placeholder="e.g. +971 50 123 4567" required>
+                  <input type="tel" id="clientPhone" name="phone" class="form-control" placeholder="e.g. +971 50 123 4567" required>
                 </div>
               </div>
 
@@ -194,11 +199,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="clientWebsite">Existing Website / Portfolio</label>
-                  <input type="url" id="clientWebsite" class="form-control" placeholder="https://yourbrand.com">
+                  <input type="url" id="clientWebsite" name="website" class="form-control" placeholder="https://yourbrand.com">
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="industrySelect">Primary Industry <span class="req">*</span></label>
-                  <select id="industrySelect" class="form-control" required>
+                  <select id="industrySelect" name="industry" class="form-control" required>
                     <option value="" disabled selected>Select Industry</option>
                     <option value="luxury-hospitality">Luxury Hospitality &amp; Resorts</option>
                     <option value="fashion-apparel">Haute Couture &amp; Fashion</option>
@@ -217,27 +222,27 @@
                 <label class="form-label">Services &amp; Practices Required <span class="req">*</span></label>
                 <div class="form-checkbox-group">
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="strategy" checked>
+                    <input type="checkbox" name="services" value="Brand Strategy & Positioning" checked>
                     <span>✦ Brand Strategy &amp; Positioning</span>
                   </label>
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="identity" checked>
+                    <input type="checkbox" name="services" value="Visual Identity & Logo System" checked>
                     <span>✦ Visual Identity &amp; Logo System</span>
                   </label>
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="packaging">
+                    <input type="checkbox" name="services" value="Luxury Packaging & Dielines">
                     <span>✦ Luxury Packaging &amp; Dielines</span>
                   </label>
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="digital">
+                    <input type="checkbox" name="services" value="Website & Digital Experience">
                     <span>✦ Website &amp; Digital Experience</span>
                   </label>
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="campaigns">
+                    <input type="checkbox" name="services" value="Creative Launch Campaign">
                     <span>✦ Creative Launch Campaign</span>
                   </label>
                   <label class="form-checkbox-chip">
-                    <input type="checkbox" name="services" value="guidelines">
+                    <input type="checkbox" name="services" value="Complete Brand Book Guidelines">
                     <span>✦ Complete Brand Book Guidelines</span>
                   </label>
                 </div>
@@ -258,7 +263,7 @@
 
                 <div class="form-group">
                   <label class="form-label" for="timelineSelect">Desired Completion Timeline</label>
-                  <select id="timelineSelect" class="form-control">
+                  <select id="timelineSelect" name="timeline" class="form-control">
                     <option value="immediate">Immediate (Next 4–6 Weeks)</option>
                     <option value="quarter" selected>Within This Quarter (2–3 Months)</option>
                     <option value="future">Next Quarter / Long-term Planning</option>
@@ -269,7 +274,7 @@
               <!-- Project Narrative -->
               <div class="form-group">
                 <label class="form-label" for="projectDescription">Tell Us About Your Brand &amp; Objectives <span class="req">*</span></label>
-                <textarea id="projectDescription" class="form-control" placeholder="Briefly describe your vision, the core challenge, key target audiences, and what success looks like..." required></textarea>
+                <textarea id="projectDescription" name="message" class="form-control" placeholder="Briefly describe your vision, the core challenge, key target audiences, and what success looks like..." required></textarea>
               </div>
 
               <div style="margin-top: 2rem;">
